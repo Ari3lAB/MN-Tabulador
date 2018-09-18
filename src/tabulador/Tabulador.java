@@ -14,19 +14,19 @@ public class Tabulador {
     Scanner keyboard = new Scanner(System.in);
 
     private void tabula(int limSup, int limInf, int increm) {                   //Método tabulador
-        if (limInf >= limSup) {
+        if (limInf >= limSup || !(increm > 1) || limInf == limSup) {
             System.out.println("Valores de entrada invalidos");
             return;
         }
 
-        System.out.println("---- ----");
+        System.out.println("--------\t--------");
         while (limInf <= limSup) {
             float fx = f(limInf);
             System.out.print("x= ");
             System.out.printf("%03d", limInf);
             System.out.print(" ║ y= ");
             System.out.printf("%.4f", fx);
-            System.out.println("\n---- ----");
+            System.out.println("\n--------\t--------");
             limInf = limInf + increm;
         }
     }
