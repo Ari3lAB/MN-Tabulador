@@ -14,7 +14,7 @@ public class Tabulador {
     Scanner keyboard = new Scanner(System.in);
 
     private void tabula(int limSup, int limInf, int increm) {                   //Método tabulador
-        if (limInf >= limSup || !(increm > 1) || limInf == limSup) {
+        if (limInf >= limSup || !(increm >= 1) || limInf == limSup) {
             System.out.println("Valores de entrada invalidos");
             return;
         }
@@ -33,12 +33,13 @@ public class Tabulador {
 
     private float f(float x) {
         float y;
-
-        y = (float) (((-12 * (Math.pow(x, 5))) - (6.4 * (Math.pow(x, 3))) + 12)); //Ecuacion
+        //y = (float) (((-12 * (Math.pow(x, 5))) - (6.4 * (Math.pow(x, 3))) + 12)); //Ecuacion
+        y = (float) (((0.667 * (Math.pow(x, 3))) - (3.29 * (Math.pow(x, 2))) + (6.21 * x) - 2.1));   //Ecuacion actualizada
         return y;
     }
 
     public void main() {                                                        //Metodo principal
+        System.out.println("Recuerde usar solo valores enteros!\n");
         System.out.println("Ingrese el limite inferior:");
         this.limInf = keyboard.nextInt();
         System.out.println("Ingrese el limite superior:");
